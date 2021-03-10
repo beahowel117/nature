@@ -1,0 +1,63 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* short for transition all properites will be animated */
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  /*  the Y axis goes from top to bottom: to go up its - to go down it's + */
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+    &::after{
+      /* scale increases the element so 2 will appear double the size was before  opacity: 0sets something to invisible */
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  /* moves in relation to the link state -- original state*/
+  &:active{
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+  }
+
+  &--white{
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after{
+      background-color: $color-white;
+    }
+  }
+
+  /* after sudo element used to correct fixes */
+  &::after {
+    /* have to content even if empty and display: want to be same as element referring to*/
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* absolute positioning needs to have a reference, the reference is the first element with the position relative it can find so in this case it would be the header but we wnat it to be the button so need to set the postition of the button to relative*/
+    position: absolute;
+    top: 0;
+    left:0;
+    /* z index defines the position of elements if on top of one another -1 will be behind the button in this case...we want to see when hover tho*/
+    z-index: -1;
+    transition: all .4s;
+  }
+
+  &--animated {
+    /* animation name, duration, timing function, delay */
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}
