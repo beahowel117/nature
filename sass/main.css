@@ -1,3 +1,4 @@
+
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -123,6 +124,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   /* fix for animation: stops the element from moving..determines if the backpart of an element is visible for a user */
+
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   margin-bottom: 6rem;
@@ -140,11 +142,11 @@ body {
           animation-duration: 1s;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  /*
+
    animation-delay: 3s;
    animation-iteration-count: 3;
    animation-timing-function: ease;
-   */
+
 }
 
 .heading-primary--sub {
@@ -170,7 +172,7 @@ body {
   display: inline-block;
   border-radius: 10rem;
   /* short for transition all properites will be animated */
-  -webkit-transition: all .2s;
+ -webkit-transition: all .2s;
   transition: all .2s;
   position: relative;
   font-size: 1.6rem;
@@ -208,7 +210,7 @@ body {
 
 .btn::after {
   /* have to content even if empty and display: want to be same as element referring to*/
-  content: "";
+ content: "";
   display: inline-block;
   height: 100%;
   width: 100%;
@@ -218,14 +220,14 @@ body {
   top: 0;
   left: 0;
   /* z index defines the position of elements if on top of one another -1 will be behind the button in this case...we want to see when hover tho*/
-  z-index: -1;
+ z-index: -1;
   -webkit-transition: all .4s;
   transition: all .4s;
 }
 
 .btn--animated {
   /* animation name, duration, timing function, delay */
-  -webkit-animation: moveInBottom .5s ease-out .75s;
+ -webkit-animation: moveInBottom .5s ease-out .75s;
           animation: moveInBottom .5s ease-out .75s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
@@ -263,7 +265,6 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
 }
 
@@ -273,7 +274,7 @@ body {
 
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
-  background-color: orangered;
+
   float: left;
 }
 

@@ -1,6 +1,5 @@
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child){
@@ -10,14 +9,12 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered;
-    float: left;
+       float: left;
 
     &:not(:last-child) {
       margin-right: $gutter-vertical;
     }
   }
-
 
   .col-1-of-2 {
     width: calc((100% - #{$gutter-horizontal}) / 2);
